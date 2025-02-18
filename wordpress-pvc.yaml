@@ -1,0 +1,13 @@
+# ===========================
+# WordPress: PersistentVolumeClaim
+# ===========================
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-pv-claim
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
