@@ -24,13 +24,13 @@ spec:
         - name: WORDPRESS_DB_USER
           valueFrom:
             secretKeyRef:
-              name: mysql-username-secret
-              key: mysql-Ukey
+              name: mysql-secret
+              key: username
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-pass-secret
-              key: mysql-Pkey
+              name: mysql-secret
+              key: password
         - name: WORDPRESS_DB_NAME
           value: wordpress
         ports:
