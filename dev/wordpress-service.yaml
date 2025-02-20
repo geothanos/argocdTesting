@@ -6,7 +6,7 @@ kind: Service
 metadata:
   name: wordpress
 spec:
-  type: ClusterIP
+  clusterIP: None
   selector:
     app: wordpress
   ports:
