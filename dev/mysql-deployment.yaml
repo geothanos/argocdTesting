@@ -21,13 +21,22 @@ spec:
         image: mysql:5.6
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: rootpass
+          valueFrom:
+            secretKeyRef:
+              name: mysql-root-secret
+              key: mysql-Rkey
         - name: MYSQL_DATABASE
           value: wordpress
         - name: MYSQL_USER
-          value: wordpress
+          valueFrom:
+            secretKeyRef:
+              name: mysql-username-secret
+              key: mysql-Ukey
         - name: MYSQL_PASSWORD
-          value: wordpresspass
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass-secret
+              key: mysql-Pkey
         ports:
         - containerPort: 3306
         volumeMounts:

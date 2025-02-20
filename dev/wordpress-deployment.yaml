@@ -22,9 +22,15 @@ spec:
         - name: WORDPRESS_DB_HOST
           value: mysql:3306
         - name: WORDPRESS_DB_USER
-          value: wordpress
+          valueFrom:
+            secretKeyRef:
+              name: mysql-username-secret
+              key: mysql-Ukey
         - name: WORDPRESS_DB_PASSWORD
-          value: wordpresspass
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass-secret
+              key: mysql-Pkey
         - name: WORDPRESS_DB_NAME
           value: wordpress
         ports:
