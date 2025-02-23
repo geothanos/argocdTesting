@@ -2,11 +2,11 @@
 # WordPress: Deployment
 # ===========================
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: wordpress
 spec:
-  serviceName: "wordpress"
+#  serviceName: "wordpress"
   selector:
     matchLabels:
       app: wordpress
