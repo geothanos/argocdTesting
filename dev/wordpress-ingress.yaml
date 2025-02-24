@@ -3,10 +3,6 @@ kind: Ingress
 metadata:
   name: wordpress-ingress
 spec:
-  tls:
-    - hosts:
-        - wordpress.local
-      secretName: my-tls-secret
   rules:
     - host: wordpress.local
       http:
